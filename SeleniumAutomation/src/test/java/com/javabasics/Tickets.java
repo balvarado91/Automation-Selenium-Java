@@ -51,7 +51,8 @@ public class Tickets {
 		System.out.println(suma);
 		return suma;
 	}
-	
+
+//Generar otro constructor sobrecargado con otro descuento con argumento DESCUENTO
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Tickets tickets = new Tickets(100,10, true);
