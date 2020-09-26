@@ -1,0 +1,14 @@
+
+SeleniumAutomation/.classpath
+SeleniumAutomation/.classpath
+/target/
+/test-output/
+/.classpath
+/*.project
+/.settings
+
+\target\
+\test-output\
+\.classpath
+\*.project
+\.settings
