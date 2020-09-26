@@ -10,6 +10,7 @@ import com.project.poclasses.HomePage;
 import org.testng.annotations.BeforeTest;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
@@ -35,7 +36,7 @@ public class TC001_Chapter_1_ValidateDropDown_POM {
 	}
 
 	@Test
-	public void TC001() {
+	public void TC001() throws IOException {
 		
 		//STEP 1
 		base.launchBrowser(GlobalVariables.SELENIUM_MAIN_URL);

@@ -1,5 +1,7 @@
 package com.automatedtester.qa;
 
+import java.io.IOException;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -26,7 +28,7 @@ public class TC002_Chapter1_ValidateText_POM {
 	}
 
 	@Test
-	public void TC002() {
+	public void TC002() throws IOException {
 		
 		//STEP1
 		base.launchBrowser(GlobalVariables.SELENIUM_MAIN_URL);

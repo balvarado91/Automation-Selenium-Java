@@ -1,9 +1,13 @@
 package com.project.base;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.concurrent.TimeUnit;
+
+import javax.imageio.ImageIO;
 
 import org.json.JSONObject;
 import org.json.JSONTokener;
@@ -17,11 +21,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.Reporter;
 
+import ru.yandex.qatools.ashot.AShot;
+import ru.yandex.qatools.ashot.Screenshot;
+
 /**
  * 
  * Class for all actions methods for interactions
  * 
- * @author Brj
+ * @author brayan.alvarado
  *
  */
 public class Base {
@@ -46,9 +53,11 @@ public class Base {
 	 * 
 	 * @author brayan.alvarado
 	 * @param url
+	 * @throws IOException 
 	 */
 
-	public void launchBrowser(String url) {
+	public void launchBrowser(String url) throws IOException {
+		takeScreenshot("TC001", "Launch Browser");
 		reporterLog("Launch Browser " + url);
 		driver.get(url);
 		driver.manage().window().maximize();
@@ -154,6 +163,23 @@ public class Base {
 		} catch (FileNotFoundException e) {
 			Assert.fail("JSON file is not found");
 			return null;
+		}
+	}
+
+	/**
+	 * Take screenshot
+	 * 
+	 * @author Brayan Alvarado
+	 * @param locator
+	 * @return locator
+	 * @throws IOException
+	 */
+	public void takeScreenshot(String testcase, String fileName) throws IOException {
+		try {
+			Screenshot screenshot = new AShot().takeScreenshot(driver);
+			ImageIO.write(screenshot.getImage(), "PNG", new File("./test-output/screenshots/"+testcase+"/"+fileName+".png"));
+		} catch (IOException e) {
+			System.out.println(e.getMessage());
 		}
 	}
 }

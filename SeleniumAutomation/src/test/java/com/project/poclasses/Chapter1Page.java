@@ -48,11 +48,9 @@ public class Chapter1Page extends Base {
 		click(click_loadTextButton);
 	}
 	
-	public void verifyTextInsertedBox() {
-	    
+	public void verifyTextInsertedBox() {	    
 	    waitForElementPresent(verify_textBox);
-	    //verify_textBox.equals(reporterLog("I have been added with a timeout");
-		
+	    //verify_textBox.equals(reporterLog("I have been added with a timeout");	
 	}
 	
 	public void assertText() {
