@@ -19,6 +19,7 @@ public class HomePage extends Base{
 	
 	// Objects
 	By link_chapter1 = By.xpath("//a[contains(text(), 'Chapter1')]");
+
 	
 	/**
 	 * Click Chapter 1
@@ -30,4 +31,5 @@ public class HomePage extends Base{
 		waitForElementPresent(link_chapter1);
 		click(link_chapter1);
 	}
+	
 }
